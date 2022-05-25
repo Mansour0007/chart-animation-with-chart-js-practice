@@ -1,6 +1,24 @@
 //fetch block
-async function fetcData() {}
-
+function updateChart() {
+  async function fetchData() {
+    const url = "data.json";
+    const response = await fetch(url);
+    // wait intel the requist has been completed
+    const datapoints = await response.json();
+    console.log(datapoints);
+    return datapoints;
+  }
+  fetchData().then((datapoints) => {
+    const month = datapoints.financialreport[0].financials.map(function (
+      index
+    ) {
+      return index.date;
+    });
+    console.log(month);
+    myChart.config.data.labels = month;
+    myChart.update();
+  });
+}
 // setup
 const data = {
   labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
