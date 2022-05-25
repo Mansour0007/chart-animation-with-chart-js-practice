@@ -1,0 +1,18 @@
+body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: black;
+}
+.box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+.chartBox {
+  width: 390px;
+}
